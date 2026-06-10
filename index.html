@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guardiãs do Campo — Tecnologia & Abelhas</title>
+
+  <!--
+    TAG AGRINHO — Projeto desenvolvido para o Concurso Agrinho
+    Tema: Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente
+    Subtema: Como a tecnologia auxilia agricultores a acompanhar suas colmeias
+    e a saúde de suas abelhas
+  -->
+  <meta name="agrinho" content="abelhas-tecnologia-sustentabilidade" />
+
+  <!-- Google Fonts — Playfair Display (títulos) + Lato (corpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVEGAÇÃO ===== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="logo" aria-label="Ir para o início">
+        🐝 <span>Guardiãs do Campo</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" id="nav-links" aria-label="Menu principal">
+        <a href="#importancia">Importância</a>
+        <a href="#tecnologia">Tecnologia</a>
+        <a href="#dados">Dados</a>
+        <a href="#biomas">Biomas</a>
+        <a href="#acao">Ação</a>
+        <a href="#creditos">Créditos</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero" aria-label="Seção de abertura">
+    <div class="hero-bg" aria-hidden="true">
+      <!--
+        Imagem de fundo: Unsplash (licença livre, sem direitos autorais)
+        Foto de Ante Hamersmit — abelhas em favo de mel
+        URL: https://unsplash.com/photos/selective-focus-photography-of-brown-bee-on-brown-wooden-surface-f8GN7GNoQf8
+        Licença: Unsplash License (uso gratuito, sem atribuição obrigatória)
+      -->
+      <img
+        src="https://images.unsplash.com/photo-1558642084-fd07fae5282e?w=1600&q=80&auto=format&fit=crop"
+        alt="Abelhas trabalhando em um favo de mel, simbolizando a importância da apicultura"
+        class="hero-img"
+        loading="eager"
+      />
+      <div class="hero-overlay" aria-hidden="true"></div>
+    </div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">Agrinho 2025</span>
+      <h1 class="hero-title">
+        Guardiãs do<br />
+        <em>Campo</em>
+      </h1>
+      <p class="hero-subtitle">
+        Como a tecnologia está ajudando agricultores a monitorar colmeias,
+        proteger abelhas e garantir o futuro da alimentação no Brasil.
+      </p>
+      <div class="hero-stats" aria-label="Dados rápidos sobre abelhas no Brasil">
+        <!--
+          Fonte: IBGE, Pesquisa da Pecuária Municipal 2024 —
+          Brasil produziu 61 milhões de kg de mel em 2024
+          Ref.: https://www.infobeebr.com.br/noticias/brasil-se-destaca-no-cenario-global-com-a-apicultura-devido-as-grandes-producoes-de-mel/
+        -->
+        <div class="hero-stat">
+          <span class="stat-num" data-target="61">0</span>
+          <span class="stat-unit">mi kg</span>
+          <span class="stat-label">mel produzido em 2024</span>
+        </div>
+        <!--
+          Fonte: Portal do Agronegócio / Ministério do Meio Ambiente —
+          Abelhas são responsáveis por 73% da polinização das áreas cultivadas
+          Ref.: https://www.portaldoagronegocio.com.br/gestao-rural/analise-de-mercado/noticias/risco-de-extincao-de-abelhas-no-brasil-pode-impactar-a-economia-164902
+        -->
+        <div class="hero-stat">
+          <span class="stat-num" data-target="73">0</span>
+          <span class="stat-unit">%</span>
+          <span class="stat-label">da polinização das culturas</span>
+        </div>
+        <!--
+          Fonte: IBGE — Cadeia produtiva do mel gera mais de 350 mil empregos
+          Ref.: https://jornalgrandebahia.com.br/2026/03/producao-de-mel-impulsiona-desenvolvimento-regional-geracao-de-renda-e-preservacao-ambiental-no-brasil/
+        -->
+        <div class="hero-stat">
+          <span class="stat-num" data-target="350">0</span>
+          <span class="stat-unit">mil</span>
+          <span class="stat-label">empregos na cadeia apícola</span>
+        </div>
+      </div>
+      <a href="#importancia" class="btn-hero" aria-label="Descobrir mais sobre abelhas e tecnologia">
+        Descobrir mais ↓
+      </a>
+    </div>
+    <div class="hero-scroll-line" aria-hidden="true"></div>
+  </section>
+
+  <!-- ===== IMPORTÂNCIA DAS ABELHAS ===== -->
+  <section class="section" id="importancia" aria-labelledby="titulo-importancia">
+    <div class="container">
+      <span class="section-eyebrow">Por que importa?</span>
+      <h2 class="section-title" id="titulo-importancia">
+        Sem abelhas, sem comida
+      </h2>
+      <p class="section-intro">
+        As abelhas são muito mais do que produtoras de mel. Elas são o motor
+        invisível que mantém a agricultura brasileira funcionando.
+      </p>
+
+      <div class="cards-grid">
+        <!--
+          Fonte: Iteec Brasil / Dra. Cíntia Mara Ribas de Oliveira (UP) —
+          Polinização influencia mais de 75% das culturas alimentares globais
+          Ref.: https://iteecbrasil.com.br/do-agro-ao-meio-ambiente-qual-a-importancia-das-abelhas-para-a-economia/
+        -->
+        <article class="card card-amber" tabindex="0">
+          <div class="card-icon" aria-hidden="true">🌸</div>
+          <h3>Polinização</h3>
+          <p>
+            As abelhas influenciam a reprodução de
+            <strong>mais de 75% das culturas alimentares</strong> globais e
+            85% das plantas com flores. No Brasil, soja, café, laranja e
+            maçã dependem diretamente desse serviço.
+          </p>
+          <cite class="card-source">
+            Fonte: Relatório Temático sobre Polinização — BPBES / REBIPP, 2019
+          </cite>
+        </article>
+
+        <!--
+          Fonte: A.B.E.L.H.A — serviço ecossistêmico dos polinizadores
+          estimado em R$ 43 bilhões para a agricultura brasileira em 2018
+          Ref.: https://abelha.org.br/polinizacao-pode-aumentar-a-produtividade-de-culturas-de-grande-importancia-agricola-no-brasil/
+        -->
+        <article class="card card-green" tabindex="0">
+          <div class="card-icon" aria-hidden="true">💰</div>
+          <h3>Valor Econômico</h3>
+          <p>
+            O serviço de polinização de abelhas contribuiu com
+            <strong>R$ 43 bilhões</strong> para a agricultura brasileira
+            somente em 2018. A soja responde por 60% desse valor,
+            seguida por café (12%) e laranja (5%).
+          </p>
+          <cite class="card-source">
+            Fonte: BPBES / REBIPP — Relatório Temático sobre Polinização, 2019
+          </cite>
+        </article>
+
+        <!--
+          Fonte: Portal do Agronegócio — Abelhas responsáveis pela
+          polinização e aumento de produtividade; 3 mil espécies no Brasil
+          Ref.: https://www.portaldoagronegocio.com.br
+        -->
+        <article class="card card-amber" tabindex="0">
+          <div class="card-icon" aria-hidden="true">🌎</div>
+          <h3>Biodiversidade</h3>
+          <p>
+            O Brasil abriga cerca de <strong>3.000 espécies de abelhas</strong>,
+            entre elas as nativas sem ferrão como jandaíra, mandaçaia e uruçu.
+            Elas polinizam espécies do Cerrado como pequi e baru, fundamentais
+            para os ecossistemas locais.
+          </p>
+          <cite class="card-source">
+            Fonte: Portal do Agronegócio / Ministério do Meio Ambiente, 2023
+          </cite>
+        </article>
+
+        <article class="card card-green" tabindex="0">
+          <div class="card-icon" aria-hidden="true">⚠️</div>
+          <h3>Ameaças Crescentes</h3>
+          <p>
+            Desmatamento, pesticidas e alterações climáticas vêm reduzindo
+            drasticamente as populações de abelhas. Estudos apontam que
+            <strong>90% dos municípios brasileiros</strong> podem sofrer com
+            a extinção local desses insetos nos próximos 30 anos.
+          </p>
+          <cite class="card-source">
+            Fonte: Portal do Agronegócio / Ministério do Meio Ambiente, 2023
+          </cite>
+        </article>
+      </div>
+
+      <!-- Imagem ilustrativa -->
+      <figure class="section-figure">
+        <!--
+          Imagem: Pexels — licença gratuita, sem direitos autorais
+          Apicultor inspecionando colmeia
+          URL: https://www.pexels.com/photo/beekeeper-inspecting-beehive-4505623/
+          Licença: Pexels License (uso livre)
+        -->
+        <img
+          src="https://images.pexels.com/photos/4505623/pexels-photo-4505623.jpeg?auto=compress&cs=tinysrgb&w=900"
+          alt="Apicultor com roupa de proteção inspecionando um quadro de colmeia coberto de abelhas"
+          loading="lazy"
+          class="figure-img"
+        />
+        <figcaption>
+          Apicultor realizando inspeção tradicional — processo demorado e estressante
+          para as abelhas, que a tecnologia IoT busca reduzir.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== TECNOLOGIA ===== -->
+  <section class="section section-alt" id="tecnologia" aria-labelledby="titulo-tecnologia">
+    <div class="container">
+      <span class="section-eyebrow">Inovação no campo</span>
+      <h2 class="section-title" id="titulo-tecnologia">
+        Tecnologia a serviço das abelhas
+      </h2>
+      <p class="section-intro">
+        Sensores, inteligência artificial e conectividade estão transformando
+        a apicultura — permitindo ao produtor monitorar suas colmeias
+        de qualquer lugar, em tempo real.
+      </p>
+
+      <div class="tech-timeline">
+        <!--
+          Fonte: Brazilian Journal of Development (2025) — sistema IoT com
+          sensores DS18B20 (temperatura) e DHT11 (umidade) + microcontrolador
+          ESP8266 para monitoramento remoto de colmeias
+          Ref.: https://ojs.brazilianjournals.com.br/ojs/index.php/BRJD/article/view/79169
+        -->
+        <div class="tech-item">
+          <div class="tech-dot" aria-hidden="true"></div>
+          <div class="tech-content">
+            <span class="tech-tag">Sensor</span>
+            <h3>Temperatura e Umidade</h3>
+            <p>
+              Sensores DS18B20 e DHT11, acoplados ao microcontrolador ESP8266,
+              monitoram continuamente o interior da colmeia. A temperatura ideal
+              para criar larvas é 35°C — qualquer desvio pode indicar doença
+              ou stress na colônia.
+            </p>
+            <p class="tech-source">
+              📄 Fonte: Brazilian Journal of Development, vol. 11 (2025) —
+              Sistema IoT para colmeias de abelhas sem ferrão (UFERSA/Ceará)
+            </p>
+          </div>
+        </div>
+
+        <!--
+          Fonte: ERCEMAPI (2024) — sistema LoRa com sensores de peso, temperatura,
+          umidade e magnético; redução de visitas ao apiário
+          Ref.: https://sol.sbc.org.br/index.php/ercemapi/article/view/30197
+        -->
+        <div class="tech-item">
+          <div class="tech-dot" aria-hidden="true"></div>
+          <div class="tech-content">
+            <span class="tech-tag">Peso & LoRa</span>
+            <h3>Balança Inteligente e Conectividade Rural</h3>
+            <p>
+              Células de carga sob a colmeia medem o peso em tempo real — um
+              indicador direto de produção de mel e saúde da colônia. A
+              transmissão via LoRa garante alcance de quilômetros sem Wi-Fi,
+              essencial em áreas rurais remotas do sertão cearense.
+            </p>
+            <p class="tech-source">
+              📄 Fonte: ERCEMAPI / SBC (2024) — Sistema IoT para Colmeias de
+              Apis Mellifera no sertão cearense
+            </p>
+          </div>
+        </div>
+
+        <!--
+          Fonte: UFERSA (2024) — sistema com ESP32, sensores de temperatura
+          DS18B20 e proximidade E18-D80NK, armazenamento Firebase
+          Ref.: https://repositorio.ufersa.edu.br/items/2410cb54-5bfa-43f1-9d2a-af0ad00392ed
+        -->
+        <div class="tech-item">
+          <div class="tech-dot" aria-hidden="true"></div>
+          <div class="tech-content">
+            <span class="tech-tag">Fluxo</span>
+            <h3>Contador de Abelhas e Firebase</h3>
+            <p>
+              Sensores de proximidade infravermelhos contam as abelhas que
+              entram e saem da colmeia. Os dados são enviados ao Firebase
+              (nuvem) e exibidos em interface web, permitindo ao apicultor
+              identificar enxameação, invasões de outros insetos ou queda
+              na atividade de forrageamento.
+            </p>
+            <p class="tech-source">
+              📄 Fonte: UFERSA (2024) — Monitoramento de colmeias de
+              abelhas sem ferrão com ESP32
+            </p>
+          </div>
+        </div>
+
+        <!--
+          Fonte: UNICAMP / Relatório PFG-24-26 (2024) — sistema com sensores
+          de VOC, som, temperatura e umidade; app móvel via Bluetooth
+          Ref.: https://www.ic.unicamp.br/~reltech/PFG/2024/PFG-24-26.pdf
+        -->
+        <div class="tech-item">
+          <div class="tech-dot" aria-hidden="true"></div>
+          <div class="tech-content">
+            <span class="tech-tag">Áudio & VOC</span>
+            <h3>Monitoramento de Sons e Compostos Químicos</h3>
+            <p>
+              Microfones captam o zumbido das abelhas — alterações no som
+              indicam stress, ausência de rainha ou presença de varroa.
+              Sensores de VOC (compostos orgânicos voláteis) detectam
+              doenças precocemente pela análise dos gases emitidos pela colmeia.
+            </p>
+            <p class="tech-source">
+              📄 Fonte: UNICAMP — Projeto de Monitoramento de Colmeias,
+              Grupo PFG 2024
+            </p>
+          </div>
+        </div>
+
+        <!--
+          Fonte: Revista Destaques Acadêmicos / Univates (2025) — sistema IoT
+          com energia solar + 4G/Starlink; previsão de aumento de 50–70% na
+          produtividade e redução de 30–40% nos custos
+          Ref.: https://www.univates.br/revistas/index.php/destaques/article/view/4420
+        -->
+        <div class="tech-item">
+          <div class="tech-dot" aria-hidden="true"></div>
+          <div class="tech-content">
+            <span class="tech-tag">Futuro</span>
+            <h3>Energia Solar, 4G e IA</h3>
+            <p>
+              Sistemas de próxima geração integram painéis solares para
+              autonomia energética, conectividade 4G ou Starlink e algoritmos
+              de inteligência artificial. Pesquisadores estimam aumento de
+              <strong>50–70%</strong> na produtividade e redução de
+              <strong>30–40%</strong> nos custos operacionais com a
+              adoção dessas tecnologias.
+            </p>
+            <p class="tech-source">
+              📄 Fonte: Revista Destaques Acadêmicos — Univates (2025) —
+              Sistema IoT inteligente de monitoramento de colmeias
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diagrama visual dos sensores -->
+      <div class="sensor-diagram" role="img" aria-label="Diagrama mostrando os sensores de uma colmeia inteligente">
+        <h3 class="diagram-title">A Colmeia Inteligente</h3>
+        <div class="diagram-grid">
+          <div class="diag-sensor">
+            <div class="diag-icon" aria-hidden="true">🌡️</div>
+            <strong>Temperatura</strong>
+            <span>DS18B20 / DHT11</span>
+            <span class="diag-range">35°C ideal</span>
+          </div>
+          <div class="diag-sensor">
+            <div class="diag-icon" aria-hidden="true">💧</div>
+            <strong>Umidade</strong>
+            <span>BME280</span>
+            <span class="diag-range">50–60% ideal</span>
+          </div>
+          <div class="diag-sensor">
+            <div class="diag-icon" aria-hidden="true">⚖️</div>
+            <strong>Peso</strong>
+            <span>Célula de carga</span>
+            <span class="diag-range">Produção de mel</span>
+          </div>
+          <div class="diag-sensor">
+            <div class="diag-icon" aria-hidden="true">🔊</div>
+            <strong>Som</strong>
+            <span>Microfone MEMS</span>
+            <span class="diag-range">Saúde da colônia</span>
+          </div>
+          <div class="diag-sensor">
+            <div class="diag-icon" aria-hidden="true">🚪</div>
+            <strong>Fluxo</strong>
+            <span>Sensor E18-D80NK</span>
+            <span class="diag-range">Atividade externa</span>
+          </div>
+          <div class="diag-sensor">
+            <div class="diag-icon" aria-hidden="true">🌿</div>
+            <strong>VOC</strong>
+            <span>Sensor de gás</span>
+            <span class="diag-range">Detecção precoce</span>
+          </div>
+        </div>
+        <div class="diag-arrow" aria-hidden="true">
+          <span>Dados em tempo real</span>
+          <span class="arrow-line">⚡ ESP32 / LoRa / 4G ⚡</span>
+          <span>📱 App do Apicultor</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DADOS E COMPARAÇÕES ===== -->
+  <section class="section" id="dados" aria-labelledby="titulo-dados">
+    <div class="container">
+      <span class="section-eyebrow">Em números</span>
+      <h2 class="section-title" id="titulo-dados">
+        O Brasil em dados
+      </h2>
+      <p class="section-intro">
+        Entender os números é o primeiro passo para agir. Veja como o agronegócio
+        brasileiro se posiciona e o que está em jogo.
+      </p>
+
+      <!-- Barras de comparação interativas -->
+      <div class="chart-section" aria-label="Gráfico de comparação de desmatamento por bioma em 2024">
+        <!--
+          Fonte: MapBiomas Alerta — RAD 2024 (Relatório Anual do Desmatamento)
+          Total desmatado em 2024: 1.242.079 ha; Cerrado: 652.197 ha (52,5%)
+          Amazônia: ~430.000 ha; Mata Atlântica estável
+          Ref.: https://brasil.mapbiomas.org/en/2025/05/15/mapbiomas-desmatamento-caiu-em-todos-os-biomas-brasileiros-em-2024/
+        -->
+        <h3 class="chart-title">
+          Desmatamento por Bioma em 2024 (hectares)
+          <small>Fonte: MapBiomas Alerta — RAD 2024</small>
+        </h3>
+        <div class="bar-chart" id="barChart" role="list">
+          <div class="bar-item" role="listitem">
+            <span class="bar-label">Cerrado</span>
+            <div class="bar-track">
+              <div class="bar-fill bar-cerrado" data-width="100" style="width:0%" aria-label="652.197 hectares"></div>
+            </div>
+            <span class="bar-value">652.197 ha</span>
+          </div>
+          <div class="bar-item" role="listitem">
+            <span class="bar-label">Amazônia</span>
+            <div class="bar-track">
+              <div class="bar-fill bar-amazonia" data-width="66" style="width:0%" aria-label="aprox. 430.000 hectares"></div>
+            </div>
+            <span class="bar-value">~430.000 ha</span>
+          </div>
+          <div class="bar-item" role="listitem">
+            <span class="bar-label">Pampa</span>
+            <div class="bar-track">
+              <div class="bar-fill bar-pampa" data-width="18" style="width:0%" aria-label="aprox. 115.000 hectares"></div>
+            </div>
+            <span class="bar-value">~115.000 ha</span>
+          </div>
+          <div class="bar-item" role="listitem">
+            <span class="bar-label">Caatinga</span>
+            <div class="bar-track">
+              <div class="bar-fill bar-caatinga" data-width="13" style="width:0%" aria-label="aprox. 82.000 hectares"></div>
+            </div>
+            <span class="bar-value">~82.000 ha</span>
+          </div>
+          <div class="bar-item" role="listitem">
+            <span class="bar-label">Pantanal</span>
+            <div class="bar-track">
+              <div class="bar-fill bar-pantanal" data-width="7" style="width:0%" aria-label="aprox. 45.000 hectares"></div>
+            </div>
+            <span class="bar-value">~45.000 ha</span>
+          </div>
+          <div class="bar-item" role="listitem">
+            <span class="bar-label">Mata Atlântica</span>
+            <div class="bar-track">
+              <div class="bar-fill bar-mata" data-width="4" style="width:0%" aria-label="aprox. 25.000 hectares"></div>
+            </div>
+            <span class="bar-value">~25.000 ha</span>
+          </div>
+        </div>
+        <p class="chart-note">
+          ⚡ Em 2024, a área média desmatada no Cerrado foi de
+          <strong>1.786 hectares por dia</strong> — equivalente a
+          quase 2.500 campos de futebol diariamente.
+          <!--
+            Fonte: MapBiomas Alerta — RAD 2024
+            Ref.: https://brasil.mapbiomas.org/en/2025/05/15/mapbiomas-desmatamento-caiu-em-todos-os-biomas-brasileiros-em-2024/
+          -->
+        </p>
+      </div>
+
+      <!-- Painel de fatos rápidos -->
+      <div class="facts-grid">
+        <!--
+          Fonte: INPE/PRODES (2025) — Desmatamento na Amazônia caiu para
+          5.796 km² em 2024–2025, menor índice em 11 anos
+          Ref.: https://data.inpe.br/biomasbr/dados-do-prodes-apontam-reducao-no-desmatamento-na-amazonia-e-no-cerrado-brasileiros/
+        -->
+        <div class="fact-card fact-good">
+          <span class="fact-icon" aria-hidden="true">✅</span>
+          <h4>Boa notícia</h4>
+          <p>
+            O desmatamento na Amazônia caiu para <strong>5.796 km²</strong>
+            (2024–2025), o menor índice em 11 anos, segundo o INPE/PRODES.
+          </p>
+        </div>
+        <!--
+          Fonte: IPAM/SAD Cerrado (2025) — desmatamento no Cerrado ainda
+          elevado: 712 mil hectares em 2024, área maior que o DF
+          Ref.: https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2025-02/desmatamento-no-cerrado-caiu-33-em-2024-mas-ainda-e-elevado
+        -->
+        <div class="fact-card fact-bad">
+          <span class="fact-icon" aria-hidden="true">⚠️</span>
+          <h4>Alerta</h4>
+          <p>
+            Mesmo com queda de 33%, o Cerrado perdeu
+            <strong>712.000 ha</strong> em 2024 — área maior que o
+            Distrito Federal. É o bioma mais desmatado do Brasil.
+          </p>
+        </div>
+        <!--
+          Fonte: MapBiomas Alerta — RAD 2024
+          Redução total de 32,4% no desmatamento em 2024 vs 2023
+          Ref.: https://brasil.mapbiomas.org/en/2025/05/15/mapbiomas-desmatamento-caiu-em-todos-os-biomas-brasileiros-em-2024/
+        -->
+        <div class="fact-card fact-info">
+          <span class="fact-icon" aria-hidden="true">📊</span>
+          <h4>Tendência</h4>
+          <p>
+            O desmatamento total no Brasil caiu <strong>32,4%</strong>
+            em 2024 — o segundo ano consecutivo de queda. Mas o ritmo
+            ainda é preocupante para os biomas.
+          </p>
+        </div>
+        <!--
+          Fonte: Portal do Agronegócio — 90% dos municípios brasileiros
+          podem perder abelhas nos próximos 30 anos
+          Ref.: https://www.portaldoagronegocio.com.br
+        -->
+        <div class="fact-card fact-bad">
+          <span class="fact-icon" aria-hidden="true">🐝</span>
+          <h4>Perigo</h4>
+          <p>
+            Estimativas indicam que <strong>90% dos municípios</strong>
+            brasileiros podem perder populações de abelhas nos próximos
+            30 anos devido ao desmatamento e ao uso de agrotóxicos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BIOMAS ===== -->
+  <section class="section section-alt" id="biomas" aria-labelledby="titulo-biomas">
+    <div class="container">
+      <span class="section-eyebrow">Onde vivem nossas abelhas?</span>
+      <h2 class="section-title" id="titulo-biomas">
+        Os biomas brasileiros e as abelhas
+      </h2>
+      <p class="section-intro">
+        Cada bioma abriga espécies únicas de abelhas e enfrenta ameaças
+        distintas. Conhecê-los é essencial para protegê-los.
+      </p>
+
+      <div class="biomes-grid">
+        <!--
+          Foto: Unsplash — Amazônia, licença livre
+          Foto de Ivars Utināns
+          URL: https://unsplash.com/photos/green-trees-near-river-during-daytime-YMnXjsEeZ6k
+          Licença: Unsplash License
+        -->
+        <article class="biome-card" tabindex="0">
+          <div class="biome-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&q=80&auto=compress&fit=crop"
+              alt="Vista aérea da Floresta Amazônica com rio e vegetação densa"
+              loading="lazy"
+            />
+            <span class="biome-badge biome-badge-green">Amazônia</span>
+          </div>
+          <div class="biome-body">
+            <p>
+              Maior floresta tropical do mundo, abriga centenas de espécies
+              de abelhas nativas sem ferrão. O desmatamento caiu para
+              <strong>5.796 km² em 2024</strong>, mas o Mato Grosso ainda
+              registrou aumento de 25%.
+            </p>
+            <!--
+              Fonte: INPE/PRODES 2025 — taxa de desmatamento da Amazônia
+              Ref.: https://data.inpe.br/biomasbr/dados-do-prodes-apontam-reducao-no-desmatamento-na-amazonia-e-no-cerrado-brasileiros/
+            -->
+            <cite>Fonte: INPE/PRODES, 2025</cite>
+          </div>
+        </article>
+
+        <!--
+          Foto: Unsplash — Cerrado, savana brasileira, licença livre
+          Foto de Paulo Barcellos Jr.
+          URL: https://unsplash.com/photos/tree-on-green-grass-field-during-daytime-bTL5RTHF1WA
+          Licença: Unsplash License
+        -->
+        <article class="biome-card biome-card-alert" tabindex="0">
+          <div class="biome-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1588392382834-a891154bca4d?w=600&q=80&auto=compress&fit=crop"
+              alt="Paisagem do Cerrado brasileiro com árvores retorcidas e céu aberto"
+              loading="lazy"
+            />
+            <span class="biome-badge biome-badge-amber">Cerrado ⚠️</span>
+          </div>
+          <div class="biome-body">
+            <p>
+              Bioma mais desmatado do Brasil em 2024 —
+              <strong>652.197 hectares perdidos</strong>. O Cerrado é o lar
+              de espécies como o pequi e o baru, que dependem das abelhas
+              para se reproduzir. A região do Matopiba concentrou 75% do
+              desmatamento.
+            </p>
+            <!--
+              Fonte: MapBiomas Alerta — RAD 2024
+              Ref.: https://brasil.mapbiomas.org/en/2025/05/15/mapbiomas-desmatamento-caiu-em-todos-os-biomas-brasileiros-em-2024/
+            -->
+            <cite>Fonte: MapBiomas Alerta — RAD 2024</cite>
+          </div>
+        </article>
+
+        <!--
+          Foto: Unsplash — Mata Atlântica, licença livre
+          Foto de Anete Lusina
+          URL: https://unsplash.com/photos/waterfall-in-forest-SvwKJ2bkpME
+          Licença: Unsplash License
+        -->
+        <article class="biome-card" tabindex="0">
+          <div class="biome-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80&auto=compress&fit=crop"
+              alt="Floresta tropical exuberante com vegetação diversa representando a Mata Atlântica"
+              loading="lazy"
+            />
+            <span class="biome-badge biome-badge-green">Mata Atlântica</span>
+          </div>
+          <div class="biome-body">
+            <p>
+              Reduzida a menos de 12% da cobertura original, a Mata Atlântica
+              manteve-se estável em 2024. As abelhas nativas aqui são
+              indicadoras da qualidade ambiental e essenciais para a
+              agricultura familiar do Sul e Sudeste.
+            </p>
+            <!--
+              Fonte: MapBiomas Alerta — RAD 2024 (Mata Atlântica estável)
+              Ref.: https://brasil.mapbiomas.org/en/2025/05/15/mapbiomas-desmatamento-caiu-em-todos-os-biomas-brasileiros-em-2024/
+            -->
+            <cite>Fonte: MapBiomas Alerta — RAD 2024</cite>
+          </div>
+        </article>
+
+        <!--
+          Foto: Wikimedia Commons / Unsplash — Caatinga, licença livre
+        -->
+        <article class="biome-card" tabindex="0">
+          <div class="biome-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1596003906949-67221c37965c?w=600&q=80&auto=compress&fit=crop"
+              alt="Paisagem árida da Caatinga com cactos e vegetação seca característica do semiárido"
+              loading="lazy"
+            />
+            <span class="biome-badge biome-badge-amber">Caatinga</span>
+          </div>
+          <div class="biome-body">
+            <p>
+              Único bioma exclusivamente brasileiro, a Caatinga abriga a abelha
+              Jandaíra (<em>Melipona subnitida</em>), nativa do semiárido e
+              crucial para a meliponicultura regional. A seca e o desmatamento
+              ameaçam sua sobrevivência.
+            </p>
+            <!--
+              Fonte: UFERSA (2024) — pesquisa com abelha Jandaíra no semiárido
+              Ref.: https://repositorio.ufersa.edu.br/items/2410cb54-5bfa-43f1-9d2a-af0ad00392ed
+            -->
+            <cite>Fonte: UFERSA — Pesquisa com Jandaíra, 2024</cite>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== QUIZZ / AÇÃO ===== -->
+  <section class="section" id="acao" aria-labelledby="titulo-acao">
+    <div class="container">
+      <span class="section-eyebrow">E você?</span>
+      <h2 class="section-title" id="titulo-acao">
+        O que você pode fazer?
+      </h2>
+      <p class="section-intro">
+        A sustentabilidade começa com pequenas escolhas diárias. Teste seus
+        conhecimentos e descubra como contribuir!
+      </p>
+
+      <!-- Quiz interativo -->
+      <div class="quiz-box" id="quiz" role="form" aria-live="polite">
+        <div class="quiz-progress">
+          <div class="quiz-bar" id="quizBar" style="width:0%" aria-valuenow="0" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <p class="quiz-counter" id="quizCounter">Pergunta 1 de 4</p>
+
+        <div id="quizArea">
+          <!-- Perguntas inseridas via JavaScript -->
+        </div>
+      </div>
+
+      <!-- Ações práticas -->
+      <div class="actions-grid">
+        <div class="action-item">
+          <div class="action-num" aria-hidden="true">01</div>
+          <h4>Apoie produtos locais</h4>
+          <p>Compre mel e própolis de apicultores da sua região. Isso incentiva
+          a criação responsável de abelhas e a preservação do meio ambiente.</p>
+        </div>
+        <div class="action-item">
+          <div class="action-num" aria-hidden="true">02</div>
+          <h4>Plante flores nativas</h4>
+          <p>Mesmo em vasos e jardins pequenos, flores nativas oferecem néctar
+          e pólen para abelhas urbanas. Ipê, girassol e lavanda são boas opções.</p>
+        </div>
+        <div class="action-item">
+          <div class="action-num" aria-hidden="true">03</div>
+          <h4>Evite agrotóxicos</h4>
+          <p>Prefira métodos naturais de controle de pragas. Pesticidas
+          são uma das principais causas de mortalidade de abelhas no Brasil.</p>
+        </div>
+        <div class="action-item">
+          <div class="action-num" aria-hidden="true">04</div>
+          <h4>Compartilhe este conhecimento</h4>
+          <p>Fale com amigos e família sobre a importância das abelhas.
+          A consciência coletiva é a principal ferramenta de transformação.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RODAPÉ / CRÉDITOS ===== -->
+  <footer class="footer" id="creditos" aria-label="Créditos do projeto">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo">🐝 Guardiãs do Campo</span>
+        <p>
+          Projeto desenvolvido para o Concurso Agrinho 2025.<br />
+          Tema: <em>Agro forte, futuro sustentável</em>.
+        </p>
+        <!-- TAG AGRINHO obrigatória -->
+        <span class="agrinho-tag" aria-label="Tag Agrinho">agrinho</span>
+      </div>
+
+      <div class="footer-credits">
+        <h3>Fontes e Referências</h3>
+        <ul>
+          <li>
+            <strong>INPE/PRODES</strong> — Monitoramento do desmatamento
+            da Amazônia e Cerrado, 2024–2025.
+            <a href="https://data.inpe.br" target="_blank" rel="noopener noreferrer">data.inpe.br</a>
+          </li>
+          <li>
+            <strong>MapBiomas Alerta</strong> — Relatório Anual do
+            Desmatamento (RAD) 2024.
+            <a href="https://brasil.mapbiomas.org" target="_blank" rel="noopener noreferrer">brasil.mapbiomas.org</a>
+          </li>
+          <li>
+            <strong>BPBES/REBIPP</strong> — Relatório Temático sobre
+            Polinização, Polinizadores e Produção de Alimento no Brasil, 2019.
+          </li>
+          <li>
+            <strong>IBGE</strong> — Pesquisa da Pecuária Municipal 2024:
+            produção de mel no Brasil.
+          </li>
+          <li>
+            <strong>Brazilian Journal of Development</strong> — Sistema IoT
+            de monitoramento de colmeias (UFERSA/Ceará), 2025.
+          </li>
+          <li>
+            <strong>ERCEMAPI/SBC</strong> — Sistema IoT para Apis Mellifera
+            no sertão cearense, 2024.
+          </li>
+          <li>
+            <strong>UNICAMP</strong> — Projeto PFG-24-26: Monitoramento de
+            Colmeias, 2024.
+          </li>
+          <li>
+            <strong>Univates</strong> — Revista Destaques Acadêmicos: Sistema
+            IoT inteligente de colmeias, 2025.
+          </li>
+          <li>
+            <strong>Imagens</strong>: Unsplash (unsplash.com) e Pexels
+            (pexels.com) — licença gratuita, sem direitos autorais,
+            uso livre para projetos educacionais e comerciais.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>
+        Desenvolvido com 💛 para o Agrinho 2025 &mdash;
+        Linguagens: HTML, CSS e JavaScript &mdash;
+        Todas as fontes são públicas e verificáveis.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
